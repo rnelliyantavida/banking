@@ -1,0 +1,46 @@
+<form [formGroup]= "employeeForm" (ngSubmit)="onSaveEmployee()">
+    <h2 style="color: blue;">Employee</h2>
+    <h3 style="color: green;">Add Employee</h3>
+    <label>First Name: &nbsp;</label>
+    <input type="text" formControlName= "firstName"><br>
+    <label>Last Name: &nbsp;</label>
+    <input type="text" formControlName= "lastName"><br>
+    <label>Address: &nbsp;</label>
+    <input type="text" formControlName= "address"><br>
+    <label>Age: &nbsp;</label>
+    <input type="number" formControlName= "age"><br>
+    <label>Salary: &nbsp;</label>
+    <input type="number" formControlName= "salary"><br>
+    <label>Bank Location: &nbsp;</label>
+    <input type="text" formControlName= "bankLocation"><br>
+    <label>Phone Number: &nbsp;</label>
+    <input type="text" formControlName= "phoneNumber"><br>
+    <button type="submit" class="btn btn-success">Save</button>
+    <h3 style="color: red;">Delete Employee</h3>
+    <label>SSN: &nbsp;</label>
+    <input type="number" formControlName= "ssn"><br>
+    <button type="button" class="btn btn-danger" (click)="onDeleteEmployee()">Delete</button>
+</form>
+<hr>
+<form [formGroup]= "customerForm" (ngSubmit)="onSaveCustomer()">
+    <h2 style="color: blue;">Customer</h2>
+    <h3 style="color: green;">Add Customer</h3>
+    <label>First Name: &nbsp;</label>
+    <input type="text" formControlName= "firstName"><br>
+    <label>Last Name: &nbsp;</label>
+    <input type="text" formControlName= "lastName"><br>
+    <label>Address: &nbsp;</label>
+    <input type="text" formControlName= "address"><br>
+    <label>Age: &nbsp;</label>
+    <input type="number" formControlName= "age"><br>
+    <label>Occupation: &nbsp;</label>
+    <input type="text" formControlName= "occupation"><br>
+    <label>Birth Date: &nbsp;</label>
+    <input type="date" formControlName= "birthDate"><br>
+    <button type="submit" class="btn btn-success">Save</button>
+    <h3 style="color: red;">Delete Customer</h3>
+    <label>Account Number: &nbsp;</label>
+    <input type="number" formControlName= "accNo"><br>
+    <button type="button" class="btn btn-danger" (click)="onDeleteCustomer()">Delete</button>
+    <hr>
+</form>

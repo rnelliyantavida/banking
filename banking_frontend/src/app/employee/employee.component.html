@@ -1,0 +1,7 @@
+<form [formGroup]= "employeeForm" (ngSubmit)="onSubmit()">
+    <label>UserName: &nbsp;</label>
+    <input type="text" formControlName= "userName"><br><br>
+    <label>Password: &nbsp;</label>
+    <input type="password" formControlName= "password"><br><br>
+    <button type="submit" class="btn btn-primary" [disabled]="!employeeForm.valid">Submit</button>
+</form>

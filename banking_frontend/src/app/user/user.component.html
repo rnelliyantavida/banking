@@ -1,0 +1,40 @@
+<form [formGroup]= "userForm">
+    <label>Account Number</label>
+    <input type="number" formControlName="accountNumber" ngModel required> <br><br>
+    <button type="button" class="btn btn-primary" (click)="onOk()">OK</button><br>
+    <div *ngIf="isValidAccountNumber" class="form-group">
+        <div *ngIf="userDetails">
+            <h3>{{ userDetails.firstName }} {{userDetails.lastName}}</h3>
+            <p>Address: {{ userDetails.address}}</p>
+            <p>Age: {{ userDetails.age}}</p>
+            <p>Balance: ${{ userDetails.balance }}</p>
+            <p>Birth Date: {{ userDetails.birthDate }}</p>
+            <p>Ocuupation: {{ userDetails.occupation }}</p>
+            <p>Last Transaction: {{ userDetails.lastTransaction }}</p>
+        </div>
+        <ul>
+            <li  (click)="onWithdraw()"><a>Withdraw</a>
+                <div *ngIf="isWithdrawal">
+                    <label>Enter The Amount</label>
+                    <input type="number" formControlName="amount" ngModel required><br>
+                    <button type="button" (click)="withdraw()" [disabled]="!userForm.valid" class="btn btn-primary">Withdraw</button>
+                </div>
+            </li>
+            <li (click)="onDeposit()"><a>Deposit</a>
+                <div *ngIf="isDeposit">
+                    <label>Enter The Amount</label>
+                    <input type="number" formControlName="amount" ngModel required><br>
+                    <button type="button" (click)="deposit()" [disabled]="!userForm.valid" class="btn btn-primary">Deposit</button>
+                </div>
+            </li>
+            <li (click)="transaction()"><a>Transaction Details</a>
+                <div *ngIf="isTransaction">
+                    <div *ngFor="let transaction of transactions">
+                        <p>{{ transaction.lastTransaction }} of {{ transaction.amount }} on {{ transaction.transactionDate}}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</form>
+
